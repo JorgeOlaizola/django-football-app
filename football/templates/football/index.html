@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Teams App</title>
+  </head>
+  <body>
+    {% if team_list %}
+    <ul>
+      {% for team in team_list %}
+      <li><a href="{% url 'football:detail' team.id %}">{{ team.name }}</a></li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <div>No teams are available</div>
+    {% endif %}
+  </body>
+</html>
